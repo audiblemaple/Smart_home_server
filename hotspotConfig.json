@@ -1,0 +1,128 @@
+{
+  "hotspot-1": {
+    "name": "kitchen",
+    "data-position": "-4.8m 1.1m 3.8m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-2": {
+    "name": "living room blinds",
+    "data-position": "-4.4m 0.2m -3.3m",
+    "data-normal": "1m 0m 0m",
+    "type": "blind",
+    "isOn": false
+  },
+  "hotspot-3": {
+    "name": "bedroom blinds",
+    "data-position": "3m 0.2m -3.3m",
+    "data-normal": "1m 0m 0m",
+    "type": "blind",
+    "isOn": false
+  },
+  "hotspot-4": {
+    "name": "kitchen blinds",
+    "data-position": "-6.5m 0.2m 3.6m",
+    "data-normal": "1m 0m 0m",
+    "type": "blind",
+    "isOn": false
+  },
+  "hotspot-5": {
+    "name": "living room",
+    "data-position": "-4.2m 1.1m -1.1m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-6": {
+    "name": "entrance",
+    "data-position": "-2.8m 1.1m 3.2m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-7": {
+    "name": "room 2",
+    "data-position": "-0.5m 1.1m 3.2m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-8": {
+    "name": "room 1",
+    "data-position": "-0.5m 1.1m -1.1m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": true
+  },
+  "hotspot-9": {
+    "name": "dining area",
+    "data-position": "-5.6m 1.1m 1.5m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-10": {
+    "name": "bedroom bathroom",
+    "data-position": "5.6m 1.1m -1.7m",
+    "data-normal": "0m 0m 1m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-11": {
+    "name": "bedroom",
+    "data-position": "2.8m 1.1m -1.1m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-12": {
+    "name": "shower",
+    "data-position": "5.5m 1.1m 0.9m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-13": {
+    "name": "laundry",
+    "data-position": "5.6m 1.1m 2.8m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-14": {
+    "name": "hall",
+    "data-position": "1m 1.1m 1.2m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-15": {
+    "name": "sharon blinds",
+    "data-position": "-0.5m 0.2m -3.3m",
+    "data-normal": "0m 1m 0m",
+    "type": "blind",
+    "isOn": false
+  },
+  "hotspot-16": {
+    "name": "porch lights",
+    "data-position": "-4.2m 1.1m -4.4m",
+    "data-normal": "0m 1m 0m",
+    "type": "light",
+    "isOn": false
+  },
+  "hotspot-17": {
+    "name": "door cam",
+    "data-position": "-2.8m 1.1m 5m",
+    "data-normal": "0m 1m 0m",
+    "type": "cam",
+    "isOn": false
+  },
+  "hotspot-18": {
+    "name": "air conditioning",
+    "data-position": "-2.2m 0.2m 0.2m",
+    "data-normal": "0m 1m 0m",
+    "type": "ac",
+    "isOn": false
+  }
+}
