@@ -1,5 +1,3 @@
-// controlController.js
-
 const handleControlCommand = async (req, res) => {
     try {
         const { action, slot } = req.body;
