@@ -4,15 +4,25 @@ let fetch;
     fetch = (await import('node-fetch')).default;
 })();
 
-// Synchronously read the JSON file
-const configData = fs.readFileSync('serverConfig.json');
-const config = JSON.parse(configData);
+const fs = require('fs').promises;
+const path = require('path');
 
-const token = config.token;
-const rootIp = config.rootIp;
+// Define the path to the configuration file
+const configPath = path.join(__dirname, 'serverConfig.json');
+
+// Function to read and parse the configuration file
+async function getConfig() {
+    const configFile = await fs.readFile(configPath, 'utf8');
+    return JSON.parse(configFile);
+}
 
 const sendCommand = async (req, res) => {
-    const { nodeID, action, token } = req.body;
+    const { nodeID, action } = req.body; // Remove token from here
+
+    // Read config
+    const config = await getConfig();
+    const token = config.token;
+    const rootIp = config.rootIp;
 
     const url = `http://${rootIp}/comm?id=${nodeID}&act=${action}&token=${token}`;
 
@@ -25,8 +35,6 @@ const sendCommand = async (req, res) => {
         })
         .catch(error => {
             console.error('Error sending command:', error);
-            // You can choose a different status code based on the error type.
-            // For this example, I'm using 500 (Internal Server Error).
             res.status(500).send({ message: 'Error sending command' });
         });
 };
