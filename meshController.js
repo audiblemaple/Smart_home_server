@@ -53,9 +53,8 @@ const fetchNodeIds = async (req, res) => {
         // if (json.subs){
         //
         // }
-        res.status(200).send({success: true, json: json});
+        res.status(200).send({success: true, list: json});
     } catch (error) {
-        const error = "No Root node is connected, please connect nodes."
         console.log(error);
         res.status(404).send({success: false, error:error});
     } finally {
