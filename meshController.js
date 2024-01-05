@@ -39,4 +39,29 @@ const sendCommand = async (req, res) => {
         });
 };
 
+const fetchNodeIds = async (req, res) => {
+    const config = await getConfig();
+    const rootIp = config.rootIp;
+    try {
+        const response = await fetch(`http://${rootIp}/getNodes`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const json = await response.json();
+        console.log(json);
+        // if (json.subs){
+        //
+        // }
+        // else
+        res.status(200).send({success: "success", json: json})
+    } catch (error) {
+        setTimeout(() => {
+        console.log("error fetching node id's");
+        res.status(404).send({success: "success", json: json})
+        }, 3000);
+    } finally {
+        console.log("loading");
+    }
+};
+
 module.exports = { sendCommand };

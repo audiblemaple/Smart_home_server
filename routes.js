@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const configController = require('./configController');
 const blindController = require('./blindController');
-const commandController = require('./commandController');
+const commandController = require('./meshController');
 
 router.get('/config', configController.getConfig);
 router.post('/config', configController.updateConfig);
