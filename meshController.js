@@ -64,4 +64,4 @@ const fetchNodeIds = async (req, res) => {
     }
 };
 
-module.exports = { sendCommand };
+module.exports = { sendCommand, fetchNodeIds };

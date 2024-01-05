@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const configController = require('./configController');
 const blindController = require('./blindController');
-const commandController = require('./meshController');
+const meshController = require('./meshController');
 
 router.get('/config', configController.getConfig);
 router.post('/config', configController.updateConfig);
 router.post('/blinds', blindController.handleControlCommand);
-router.post('/command', commandController.sendCommand);
+router.post('/command', meshController.sendCommand);
+router.post('/getNodeIds', meshController.fetchNodeIds);
 
 module.exports = router;
