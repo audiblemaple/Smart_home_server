@@ -8,6 +8,6 @@ router.get('/config', configController.getConfig);
 router.post('/config', configController.updateConfig);
 router.post('/blinds', blindController.handleControlCommand);
 router.post('/command', meshController.sendCommand);
-router.post('/getNodeIds', meshController.fetchNodeIds);
+router.get('/getNodeIds', meshController.fetchNodeIds);
 
 module.exports = router;
