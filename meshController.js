@@ -40,6 +40,7 @@ const sendCommand = async (req, res) => {
 };
 
 const fetchNodeIds = async (req, res) => {
+    console.log("error fetching node id's");
     const config = await getConfig();
     const rootIp = config.rootIp;
     try {
@@ -52,15 +53,13 @@ const fetchNodeIds = async (req, res) => {
         // if (json.subs){
         //
         // }
-        // else
-        res.status(200).send({success: "success", json: json})
+        res.status(200).send({success: true, json: json});
     } catch (error) {
-        setTimeout(() => {
-        console.log("error fetching node id's");
-        res.status(404).send({success: "success", json: json})
-        }, 3000);
+        const error = "No Root node is connected, please connect nodes."
+        console.log(error);
+        res.status(404).send({success: false, error:error});
     } finally {
-        console.log("loading");
+        console.log("loading...");
     }
 };
 

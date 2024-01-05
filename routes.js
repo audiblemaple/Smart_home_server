@@ -4,10 +4,10 @@ const configController = require('./configController');
 const blindController = require('./blindController');
 const meshController = require('./meshController');
 
-router.get('/config', configController.getConfig);
+router.get( '/config', configController.getConfig);
 router.post('/config', configController.updateConfig);
 router.post('/blinds', blindController.handleControlCommand);
 router.post('/command', meshController.sendCommand);
-router.get('/getNodeIds', meshController.fetchNodeIds);
+router.get( '/getNodeIds', meshController.fetchNodeIds);
 
 module.exports = router;
