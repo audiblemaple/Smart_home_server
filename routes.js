@@ -6,6 +6,7 @@ const meshController = require('./meshController');
 
 router.get( '/config', configController.getConfig);
 router.post('/config', configController.updateConfig);
+router.post('/configLightUpdate', configController.updateLight);
 router.post('/blinds', blindController.handleControlCommand);
 router.post('/command', meshController.sendCommand);
 router.get( '/getNodeIds', meshController.fetchNodeIds);

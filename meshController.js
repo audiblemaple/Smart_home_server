@@ -17,14 +17,14 @@ async function getConfig() {
 }
 
 const sendCommand = async (req, res) => {
-    const { nodeID, action } = req.body; // Remove token from here
+    const { nodeID, action } = req.body;
 
     // Read config
     const config = await getConfig();
     const token = config.token;
-    const rootIp = config.rootIp;
+    const rootIp = config.rootNodeIp;
 
-    const url = `http://${rootIp}/comm?id=${nodeID}&act=${action}&token=${token}`;
+    const url = `${rootNodeIp}/comm?id=${nodeID}&act=${action}&token=${token}`;
 
     // Send the GET request to the new URL
     fetch(url)
@@ -42,17 +42,15 @@ const sendCommand = async (req, res) => {
 const fetchNodeIds = async (req, res) => {
     console.log("error fetching node id's");
     const config = await getConfig();
-    const rootIp = config.rootIp;
+    const rootIp = config.rootNodeIp;
     try {
-        const response = await fetch(`http://${rootIp}/getNodes`);
+        const response = await fetch(`${rootNodeIp}/getNodes`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const json = await response.json();
         console.log(json);
-        // if (json.subs){
-        //
-        // }
+
         res.status(200).send({success: true, list: json});
     } catch (error) {
         console.log(error);
