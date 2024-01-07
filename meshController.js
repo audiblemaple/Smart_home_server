@@ -22,9 +22,8 @@ const sendCommand = async (req, res) => {
     // Read config
     const config = await getConfig();
     const token = config.token;
-    const rootIp = config.rootNodeIp;
 
-    const url = `${rootNodeIp}/comm?id=${nodeID}&act=${action}&token=${token}`;
+    const url = `${config.rootNodeIp}/comm?id=${nodeID}&act=${action}&token=${token}`;
 
     // Send the GET request to the new URL
     fetch(url)
