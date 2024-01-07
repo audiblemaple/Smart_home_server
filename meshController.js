@@ -41,9 +41,8 @@ const sendCommand = async (req, res) => {
 const fetchNodeIds = async (req, res) => {
     console.log("error fetching node id's");
     const config = await getConfig();
-    const rootIp = config.rootNodeIp;
     try {
-        const response = await fetch(`${rootNodeIp}/getNodes`);
+        const response = await fetch(`${config.rootNodeIp}/getNodes`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
