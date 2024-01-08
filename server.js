@@ -85,6 +85,8 @@ function connect() {
 
     ws.on('message', function incoming(data) {
         if ( data.includes("light_report") ){
+            let messageArgs = data.split(":");
+            configController.updateLight();
             console.log("light message");
         }
         logMessage(`${data}`);
