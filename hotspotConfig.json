@@ -19,7 +19,7 @@
     "name": "bedroom blinds",
     "nodeID": "????",
     "data-position": "3m 0.2m -3.3m",
-    "data-normal": "1m 0m 0m",
+    "data-normal": "0m 1m 0m",
     "type": "blind",
     "isOn": false
   },

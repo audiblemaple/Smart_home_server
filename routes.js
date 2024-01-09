@@ -44,6 +44,18 @@ router.post('/config', configController.updateConfig);
  */
 router.post('/configLightUpdate', configController.updateLight);
 
+
+/**
+ * Route to add a new button in the configuration file.
+ * @name post/configAddHotspot
+ * @function
+ * @memberof module:router
+ * @inner
+ * @param {string} path - Express path
+ * @param {function} middleware - Middleware function to add a new button in the configuration
+ */
+router.post('/configAddHotspot', configController.addHotspot);
+
 /**
  * Route for blind control commands.
  * @name post/blinds
