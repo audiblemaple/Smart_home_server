@@ -10,6 +10,7 @@ const router = express.Router();
 const configController = require('./configController');
 const blindController = require('./blindController');
 const meshController = require('./meshController');
+const logController = require('./logController');
 
 /**
  * Route serving the configuration.
@@ -88,5 +89,17 @@ router.post('/command', meshController.sendCommand);
  * @param {function} middleware - Middleware function to fetch node IDs
  */
 router.get('/getNodeIds', meshController.fetchNodeIds);
+
+/**
+ * Route to fetch log file.
+ * @name get/getLog
+ * @function
+ * @memberof module:router
+ * @inner
+ * @param {string} path - Express path
+ * @param {function} middleware - Middleware function to fetch node IDs
+ */
+router.get('/getLog', logController.fetchLogFile);
+
 
 module.exports = router;

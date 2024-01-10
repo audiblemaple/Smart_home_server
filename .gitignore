@@ -1,3 +1,4 @@
 log.txt
 serverConfig.json
 ./node_modules
+./hotspotConfig.json

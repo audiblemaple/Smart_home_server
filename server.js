@@ -1,8 +1,24 @@
+/*
+ * Copyright (c) 2024 Lior Jigalo.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
  * @fileoverview This file includes the main server functionality.
  * @author Lior Jigalo
  * @version 1.0.0
- * @license MIT
+ * @license GPLv3
  */
 
 const express = require('express');
@@ -44,18 +60,19 @@ app.listen(PORT, () => {
 });
 
 /**
- * Generates a timestamp in DD/MM/YY HH:MM:SS format.
+ * Get the current timestamp in the format "DD/MM/YY HH:mm:ss".
  * @returns {string} The formatted timestamp.
  */
 function getTimeStamp() {
-    let now = new Date();
-    let seconds = String(now.getSeconds()).padStart(2, '0');
-    let minutes = String(now.getMinutes()).padStart(2, '0');
-    let hours = String(now.getHours()).padStart(2, '0');
-    let day = String(now.getDate()).padStart(2, '0');
-    let month = String(now.getMonth() + 1).padStart(2, '0');
-    let year = String(now.getFullYear()).slice(-2);
-    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+    const now = new Date();
+    return now.toLocaleString('en-US', {
+        day: '2-digit',
+        month: '2-digit',
+        year: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+    });
 }
 
 /**
@@ -84,10 +101,9 @@ function connect() {
     });
 
     ws.on('message', function incoming(data) {
-        if ( data.includes("light_report") ){
-            let messageArgs = data.split(":");
-            configController.updateLight();
-            console.log("light message");
+        if ( data.toString().includes("light_report") ){
+            let messageArgs = data.toString().split(":");
+            configController.updateLight(messageArgs[0], messageArgs[2] === "true");
         }
         logMessage(`${data}`);
     });
