@@ -230,3 +230,5 @@ const updateLight = async (nodeID, isOn) => {
         }
     }
 };
+
+module.exports = { updateConfig, getConfig, addHotspot, updateLight };
