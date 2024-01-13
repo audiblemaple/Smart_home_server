@@ -91,7 +91,7 @@ function logMessage(message) {
 }
 
 /**
- * Initializes the WebSocket connection and sets up event handlers.
+ * Initializes the WebSocket connection to the root node and sets up event handlers.
  */
 function connect() {
     ws = new WebSocket(config.rootNodeWS);
@@ -125,3 +125,33 @@ function connect() {
 
 // Initial connection
 connect();
+
+
+const WebSocketServer = require('ws');
+// Create a new WebSocket server instance
+const websocketServer = new WebSocketServer.Server({ port: 8080 });
+
+websocketServer.on('connection', function connection(ws) {
+    console.log('A new client connected!');
+
+    // Event listener for messages from the client
+    ws.on('message', function incoming(message) {
+        console.log('Received: %s', message);
+    });
+
+    // Send a message to the client
+    ws.send('Hello! You are connected to the server.');
+});
+
+console.log('WebSocket server is running on ws://localhost:8080');
+
+
+
+
+
+
+
+
+
+
+
