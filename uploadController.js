@@ -23,8 +23,8 @@ const storage = multer.diskStorage({
         cb(null, uploadDir);
     },
     filename: function(req, file, cb) {
-        // Use the original file name or customize it as needed
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        // Create a unique file name using the original name and a timestamp
+        cb(null, file.originalname.split('.')[0] + path.extname(file.originalname));
     }
 });
 
