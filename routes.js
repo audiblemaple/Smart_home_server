@@ -11,6 +11,7 @@ const configController = require('./configController');
 const blindController = require('./blindController');
 const meshController = require('./meshController');
 const logController = require('./logController');
+const {uploadFile} = require("./uploadController");
 
 /**
  * Route serving the configuration.
@@ -101,5 +102,10 @@ router.get('/getNodeIds', meshController.fetchNodeIds);
  */
 router.get('/getLog', logController.fetchLogFile);
 
+
+
+router.post('/uploadFile', uploadFile, (req, res) => {
+    res.send('File uploaded successfully.');
+});
 
 module.exports = router;
