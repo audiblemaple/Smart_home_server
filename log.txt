@@ -1,3 +1,27 @@
 07/01/24 13:18:33 -> Received: Node is not connected
 07/01/24 13:22:28 -> Received: Admin logged in
 07/01/24 13:25:37 -> Received: Admin logged in
+01/14/24, 09:17:54 PM -> {"type":"message","id":"110204674","data":"110204674 is connected","argument":false}
+01/14/24, 09:17:54 PM -> {"type":"message","id":"110204674","data":"Sent: turn_on to: 110204674","argument":false}
+01/14/24, 09:17:54 PM -> {"type":"message","id":"110204674","data":"success","argument":false}
+01/14/24, 09:17:54 PM -> {"type":"light","id":"110204674","data":"none","argument":true}
+01/14/24, 09:17:55 PM -> {"type":"message","id":"110204674","data":"110204674 is connected","argument":false}
+01/14/24, 09:17:55 PM -> {"type":"message","id":"110204674","data":"Sent: turn_off to: 110204674","argument":false}
+01/14/24, 09:17:55 PM -> {"type":"message","id":"110204674","data":"success","argument":false}
+01/14/24, 09:17:55 PM -> {"type":"light","id":"110204674","data":"none","argument":false}
+01/14/24, 09:17:57 PM -> {"type":"message","id":"110204674","data":"110204674 is connected","argument":false}
+01/14/24, 09:17:58 PM -> {"type":"message","id":"110204674","data":"Sent: turn_on to: 110204674","argument":false}
+01/14/24, 09:17:58 PM -> {"type":"message","id":"110204674","data":"success","argument":false}
+01/14/24, 09:17:58 PM -> {"type":"light","id":"110204674","data":"none","argument":true}
+01/14/24, 09:17:59 PM -> {"type":"message","id":"110204674","data":"110204674 is connected","argument":false}
+01/14/24, 09:17:59 PM -> {"type":"message","id":"110204674","data":"Sent: turn_off to: 110204674","argument":false}
+01/14/24, 09:17:59 PM -> {"type":"message","id":"110204674","data":"success","argument":false}
+01/14/24, 09:18:00 PM -> {"type":"light","id":"110204674","data":"none","argument":false}
+01/14/24, 09:18:01 PM -> {"type":"message","id":"110204674","data":"110204674 is connected","argument":false}
+01/14/24, 09:18:02 PM -> {"type":"message","id":"110204674","data":"Sent: turn_on to: 110204674","argument":false}
+01/14/24, 09:18:02 PM -> {"type":"message","id":"110204674","data":"success","argument":false}
+01/14/24, 09:18:02 PM -> {"type":"light","id":"110204674","data":"none","argument":true}
+01/14/24, 09:18:02 PM -> {"type":"message","id":"110204674","data":"110204674 is connected","argument":false}
+01/14/24, 09:18:02 PM -> {"type":"message","id":"110204674","data":"Sent: turn_off to: 110204674","argument":false}
+01/14/24, 09:18:03 PM -> {"type":"message","id":"110204674","data":"success","argument":false}
+01/14/24, 09:18:03 PM -> {"type":"light","id":"110204674","data":"none","argument":false}
