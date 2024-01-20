@@ -1,5 +1,6 @@
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 // Custom storage configuration
 const storage = multer.diskStorage({
@@ -48,4 +49,39 @@ const uploadFile = (req, res, next) => {
     });
 };
 
-module.exports = { uploadFile };
+
+const listDir = (req, res) => {
+    const request = req.body;
+    let directoryPath = null;
+    const { dir } = req.body;
+    console.log("body: " + dir);
+
+    switch(req.body.dir){
+        case "models":
+            directoryPath = path.join(__dirname, 'public/models');
+            console.log(directoryPath);
+            break;
+        case "skyboxes":
+            directoryPath = path.join(__dirname, 'public/models');
+            console.log(directoryPath);
+            break;
+        default:
+            return res.status(404).send("dir not found");
+    }
+
+    fs.readdir(directoryPath, function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        }
+        //listing all files using forEach
+        files.forEach(function (file) {
+            // Do whatever you want to do with the file
+            console.log(file);
+        });
+    });
+
+    console.log("done.");
+};
+
+module.exports = { uploadFile, listDir };
