@@ -62,7 +62,7 @@ const listDir = (req, res) => {
             console.log(directoryPath);
             break;
         case "skyboxes":
-            directoryPath = path.join(__dirname, 'public/models');
+            directoryPath = path.join(__dirname, 'public/skyBoxes');
             console.log(directoryPath);
             break;
         default:
